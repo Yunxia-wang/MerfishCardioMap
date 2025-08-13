@@ -1,43 +1,25 @@
-# MerfishCardioMap
+# MerfishCardioMap — Multipolygon Visualization Script
 
 **3D spatial organization of heterogeneous progenitors in the zebrafish heart field pre-patterns cardiovascular development**
 
----
-
-## Overview
-This repository contains analysis pipelines, image-processing scripts, and data-handling utilities for reconstructing and analyzing 3D spatial transcriptomic maps from MERFISH experiments of the zebrafish heart field. The project aims to uncover how heterogeneous progenitor populations are spatially organized during early cardiovascular development.
+This repository contains Python code for visualizing **2D spatial polygon geometries** (e.g., segmented cells, tissue regions) using Plotly, and exporting the results to PDF.  
+The script reads polygon geometries from a dataset (e.g., `.parquet`), assigns colors based on associated metadata, and plots them with equal aspect ratio for accurate spatial representation.
 
 ---
 
 ## Features
-- **Image Processing**
-  - Mosaic splitting and replicate cropping for large `.tif` images
-  - Alignment of DAPI and additional fluorescent channels
-  - Support for Open-ST’s STIM and PASTE2-based spatial alignment
-- **3D Reconstruction**
-  - Reconstruction of embryo/tissue sections into volumetric spatial maps
-  - Handling of multiple replicates per region
-- **Cellular Analysis**
-  - Extraction of cell coordinates and transcript counts from aligned images
-  - Downstream clustering, annotation, and visualization
-- **Visualization Tools**
-  - Overlays for replicate boundary identification
-  - 3D rendering of spatially aligned datasets
+- **Reads MultiPolygon and Polygon geometries** from geospatial datasets.
+- Handles both **single polygons** and **multiple polygons per entity**.
+- **Closes polygon loops** automatically to ensure correct rendering.
+- **Custom colors** for each polygon (e.g., based on cluster or annotation).
+- **High-quality PDF export** using Plotly + Kaleido.
+- Maintains **equal scaling** of X and Y axes for accurate spatial visualization.
 
 ---
 
-## Requirements
-- Python ≥ 3.9
-- Key Python packages:
-  - `numpy`
-  - `pandas`
-  - `matplotlib`
-  - `scikit-image`
-  - `tifffile`
-  - `napari`
-  - [Open-ST](https://github.com/junjuew/Open-ST) (for STIM alignment)
-  - [PASTE2](https://github.com/raphael-group/paste2) (for coordinate/image alignment)
+## Dependencies
+Make sure the following Python packages are installed:
 
-Install dependencies:
 ```bash
-pip install -r requirements.txt
+pip install pandas geopandas shapely plotly kaleido
+
