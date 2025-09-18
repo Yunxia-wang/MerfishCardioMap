@@ -2,12 +2,11 @@
 # 📘 MerfishCardioMap
 
 ### Overview  
-**MerfishCardioMap** is a research toolkit for integrating **MERFISH spatial transcriptomics** data with **scRNA-seq** data to explore spatial gene expression patterns in cardiac development. The repository provides data, analysis scripts, and utilities for processing, visualization, and downstream biological interpretation.  
+**MerfishCardioMap** is a research toolkit for integrating **scRNA-seq** data with **MERFISH spatial transcriptomics** data to explore spatial gene expression patterns in cardiac development. The repository provides data analysis scripts and utilities for processing, visualization, and downstream biological interpretation.  
 
 Key features include:  
-- Preprocessing of MERFISH spatial data  
 - Integration with scRNA-seq reference datasets  
-- Alternative splicing and differential gene expression analysis  
+- Preprocessing of MERFISH spatial data    
 - Visualization tools for single-cell and spatial domains  
 
 ---
@@ -31,7 +30,6 @@ Dependencies include:
 - numpy, pandas, scanpy, anndata  
 - seaborn, matplotlib  
 - jupyter, notebook  
-- rpy2 (for R integration if needed)  
 
 ---
 
@@ -73,7 +71,7 @@ MerfishCardioMap/
 - **`cellpose_micron_space.parquet`** → Spatial coordinates of cells  
 - **`images/`** → Example output figures  
 
-> ⚠️ Data included here are processed subsets for reproducibility. Raw datasets should be obtained from the corresponding publications.  
+> ⚠️ Data included here are processed subsets for reproducibility. Single-cell RNA sequencing data have been deposited in the GEO under accession number GSE294086. MERFISH data have been deposited in the GEO under accession number GSE294469. 
 
 ---
 
@@ -86,7 +84,6 @@ jupyter notebook Main_get_single_cell_region.ipynb
 
 Inside the notebook, you can:  
 - Load MERFISH and scRNA-seq data  
-- Perform integration (Tangram-based mapping supported)  
 - Visualize UMAPs and spatial plots  
 
 ---
